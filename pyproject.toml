@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,6 +10,21 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24"]
 authors = [{name = "Pablo García Mezcua"}]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["linear-algebra", "qr-decomposition", "cholesky", "numerical-stability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/pablogarciamez/qr-scratch"
 
 [tool.setuptools.packages.find]
 where = ["src"]
