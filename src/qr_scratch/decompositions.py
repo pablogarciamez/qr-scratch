@@ -2,8 +2,19 @@ import numpy as np
 
 
 def gram_schmidt_classic(A):
-    """QR por Gram-Schmidt clásico. Devuelve (Q, R)."""
-    raise NotImplementedError
+    m, n = A.shape
+    Q = np.zeros((m, n))
+    R = np.zeros((n, n))
+
+    for i in range(n):
+        a = A[:, i]
+        v = A[:, i].copy()
+        for j in range(i):
+            R[j, i] = a @ Q[:, j]
+            v -= R[j, i] * Q[:, j]
+        R[i, i] = np.linalg.norm(v)
+        Q[:, i] = v / R[i, i]
+    return Q, R
 
 
 def gram_schmidt_modified(A):
