@@ -33,5 +33,14 @@ def gram_schmidt_modified(A):
 
 
 def cholesky(A):
-    """Cholesky de una matriz simétrica definida positiva. Devuelve L con A = L @ L.T."""
-    raise NotImplementedError
+    L = np.zeros_like(A, dtype=float)
+    for i in range(A.shape[0]):
+        for j in range(i + 1):
+            if i == j:
+                temp = A[i, i] - L[i,:i] @ L[i,:i]
+                if temp <= 0:
+                    raise np.linalg.LinAlgError("A no es definida positiva")
+                L[i, i] = np.sqrt(temp)
+            else:
+                L[i, j] = (A[i, j] - L[i, :j] @ L[j, :j]) / L[j, j]
+    return L
