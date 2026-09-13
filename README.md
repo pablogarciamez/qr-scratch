@@ -1,6 +1,6 @@
 # qr-scratch
 
-En construcción: Las implementaciones todavía no funcionan.
+En construcción: Falta la implementación de Cholesky.
 
 Implementaciones desde cero en NumPy de Gram-Schmidt clásico, Gram-Schmidt modificado y Cholesky.
 QR descompone una matriz cualquiera en Q, una matriz ortonormal y R una matriz triangular superior que permite reconstruir la matriz original. Este paquete permite comparar dos métodos (Gram-Schmidt clásico y modificado) que aunque en aritmética exacta son equivalentes, el método clásico pierde ortogonalidad con matrices mal condicionadas mientras que el modificado la conserva mejor.
